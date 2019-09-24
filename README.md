@@ -1,4 +1,5 @@
 # hello-world
+#My first code practice; the games of chance 
 
 import random
 num = random.randint(1, 6)
