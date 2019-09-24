@@ -5,8 +5,10 @@ num = random.randint(1, 6)
 money = 100
 
 #Rolling the Dice 
+#Makes sure your bet was above 0 and in range of the money accounted for 
+
 def dice_roll(guess, bet):
-    #Makes sure your bet was above 0 and in range of the money accounted for 
+    
     if bet > money or bet <= 0:
         print ("Sorry you can't do that")
         return 0 
@@ -14,7 +16,7 @@ def dice_roll(guess, bet):
         print ("Pick a number within range of dice")
         return 0 
 
-    #now the game starts 
+#now the game starts 
     else:
         print("--------------")
         print("It's time to roll the dice!")
@@ -33,9 +35,8 @@ def dice_roll(guess, bet):
         return -bet 
 
 #dice_roll(4, 10)
-
-
 #coin flip game
+
 def coin_flip(guess, bet):
     if bet > money:
         print ("Sorry you can't do that")
@@ -45,18 +46,14 @@ def coin_flip(guess, bet):
     print("The game of coin toss! You chose " + guess + ".")
     result = random.randint(1, 2)
 
-#how the flip will be interpreted 
     if result == 1:
         print("Heads!")
     elif result == 2:
         print("Tails!")
-
-#have the guess input be taken as a word
     if (guess == "Heads" and result == 1) or (guess == "Tails" and result == 2):
         print("--------------") 
         print("You won {}".format(bet))
         return bet
-
     else:
         print("--------------") 
         print("You lost {}".format(bet))
@@ -64,7 +61,7 @@ def coin_flip(guess, bet):
 
 #coin_flip("Heads, 10")
 
-#in this game you can guess Even, Odd or the exact number
+#in this game you can guess Even, Odd or the exact number for 35x your bet
 def roulette(guess, bet):
     if bet > money:
         print ("Sorry you can't do that")
@@ -114,7 +111,7 @@ def roulette(guess, bet):
 
 
 #compute bets & games played so far
-money += dice_roll(6, 10)
+#money += dice_roll(6, 10)
 #money += coin_flip("Heads", 50)
 #money += roulette("Odd", 40)
 
