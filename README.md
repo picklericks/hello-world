@@ -69,7 +69,7 @@ def roulette(guess, bet):
         return 0 
     print("--------------") 
     print("The game of Roulette! You chose {}".format(guess))
-# Number 37 is saved as 00
+
     result = random.randint(1, 36)
 
     if result == 37:
