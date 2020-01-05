@@ -44,8 +44,10 @@ def dice_roll(guess, bet):
 
 dice_roll(4, 10)
 
+## Coin Flip
 
-
+* `coin_flip` is the function that checks two conditions are satisfied: the guess is correctly **heads** or **tails**, & the bet is under the `money` amount. 
+* If both conditions are satisfied; the guess is checked, if correct, the bet is returned. If incorrect, the bet is lost. 
 
 coin flip game
 
@@ -74,54 +76,15 @@ def coin_flip(guess, bet):
 
 #coin_flip("Heads, 10")
 
+## Roulette
+
+* `roulette` is the function that checks two conditions are satisfied: the guess is in range of the number of roulette selections, & the bet is under the `money` amount. 
+* If both conditions are satisfied; the guess is checked, if the guess was correct for only even or odd, the bet is returned. If the guess was the correct number exactly, the bet is multiplied by 7.
 
 
-#in this game you can guess Even, Odd or the exact number for 35x your bet
-def roulette(guess, bet):
-    if bet > money:
-        print ("Sorry you can't do that")
-        return 0 
-    print("--------------") 
-    print("The game of Roulette! You chose {}".format(guess))
+## Total Money
 
-    result = random.randint(1, 36)
-
-    if result == 37:
-        print("--------------") 
-        print("The wheel landed on 00")
-    else:
-        print("--------------") 
-        print("The wheel landed on " + str(result))
-        
-#how to interpret the guess that was either even or odd
-
-    if guess == "Even" and result % 2 == 0 and guess != 0:
-        print(str(result) + " is an even number")
-        print("--------------") 
-        print("You won " + str(bet))
-        print("------------------")
-        return bet
-
-    if guess == "Odd" and result % 2 == 1 and result != 37:
-        print(str(result) + " is an odd number")
-        print("--------------") 
-        print("You won " + str(bet))
-        print("------------------")
-        return bet 
-
-#how to interpret the guess that was an exact number
-
-    elif guess == result:
-        print("The result was" + str(result))
-        print (" you guessed exactly right! You won" + str(bet*35))
-        print("------------------")
-        return bet * 35
-
-    else:
-        print("------------------")
-        print("The result was {}, sorry you lost {}".format(result, bet))
-        print("------------------")
-        return -bet 
+* The money is added in a running sum based on the guesses and bets from the games.
 
 
 
