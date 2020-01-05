@@ -12,6 +12,7 @@ if guess > 6 or guess < 1:
     return 0 
 
 if guess == num:
+    bet = bet * 3
     print("--------------")
     print ("You just won " + str(bet))
     print("--------------")
@@ -34,6 +35,7 @@ if result == 1:
 elif result == 2:
     print("Tails!")
 if (guess == "Heads" and result == 1) or (guess == "Tails" and result == 2):
+    bet = bet * 2
     print("--------------") 
     print("You won {}".format(bet))
     return bet
@@ -42,7 +44,6 @@ else:
     print("You lost {}".format(bet))
     return -bet
 
-number 37 will be saved as 00
 result = random.randint(1, 36)
 
 if result == 37:
@@ -53,6 +54,7 @@ else:
     print("The wheel landed on " + str(result))
 
 if guess == "Even" and result % 2 == 0 and guess != 0:
+    bet = bet * 2
     print(str(result) + " is an even number")
     print("--------------") 
     print("You won " + str(bet))
@@ -67,10 +69,11 @@ if guess == "Odd" and result % 2 == 1 and result != 37:
     return bet 
 
 elif guess == result:
+    bet = bet * 35
     print("The result was" + str(result))
-    print (" you guessed exactly right! You won" + str(bet*35))
+    print (" you guessed exactly right! You won" + str(bet))
     print("------------------")
-    return bet * 35
+    return bet
 
 else:
     print("------------------")
@@ -78,4 +81,12 @@ else:
     print("------------------")
     return -bet 
 
+
+
+compute bets & games played so far
+money += dice_roll(6, 10)
+money += coin_flip("Heads", 50)
+money += roulette("Odd", 40)
+
 print("Your total amount is $" + str(money))
+
