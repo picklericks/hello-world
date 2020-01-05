@@ -1,12 +1,19 @@
-#Games of chance
+# Games of chance
+
+* In this interactive Python 3 script, place a bet and play games of dice, a coin toss, and a game of roulette.
+
+## Dice 
+
+* Begin by setting the desired amount to start off betting with. 
+
+* `dice_roll` is the function that checks two conditions are satisfied: the guess is in range of the number of sides on the dice, & the bet is under the `money` amount. 
+* If both conditions are satisfied; the guess is checked, if correct, the bet is multiplied by 3. If incorrect, the bet is lost. 
 
 
 import random
 num = random.randint(1, 6)
-money = 100
+money = 100 
 
-#Rolling the Dice 
-#Makes sure your bet was above 0 and in range of the money accounted for 
 
 def dice_roll(guess, bet):
     
@@ -25,9 +32,9 @@ def dice_roll(guess, bet):
 
     if guess == num:
         print("--------------")
-        print ("You just won " + str(bet))
+        print ("You just won " + str(bet*3))
         print("--------------")
-        return bet
+        return bet*3
 
     if guess != num:
         print("--------------")
@@ -35,13 +42,18 @@ def dice_roll(guess, bet):
         print("--------------")
         return -bet 
 
-#dice_roll(4, 10)
-#coin flip game
+dice_roll(4, 10)
+
+
+
+
+coin flip game
 
 def coin_flip(guess, bet):
     if bet > money:
         print ("Sorry you can't do that")
         return 0 
+        
 #Now the game starts
     print("--------------") 
     print("The game of coin toss! You chose " + guess + ".")
@@ -61,6 +73,8 @@ def coin_flip(guess, bet):
         return -bet
 
 #coin_flip("Heads, 10")
+
+
 
 #in this game you can guess Even, Odd or the exact number for 35x your bet
 def roulette(guess, bet):
